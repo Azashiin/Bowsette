@@ -4,5 +4,5 @@ module.exports.run = async (client, message, args) => {
       message.delete().catch();
       message.channel.send(sayMessage);
 };
-const channel = client.channels("501421014362882068")
+const channel = client.channels("news")
 channel.send(message)
