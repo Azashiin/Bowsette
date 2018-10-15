@@ -1,11 +1,15 @@
 const Discord = require('discord.js');
 const client = new Discord.Client ();
-let xp = require("./xp.json");
+const fs = require("fs");
+
 
 const prefix = '<';
 const ownerID = '197821972703477781';
 
-client.login(process.env.TOKEN);
+let xp = require("./xp.json");
+let purple = ("./botconfig.purple");
+
+client.login("NTAwOTg0NTc1NDY4NTAzMDQw.DqaBDA.TQDEsXHb7vGpWDsr0ipETB_CNFU");
 
 client.on("ready", () =>{
     console.log("Launched");
@@ -15,7 +19,9 @@ client.on("ready", () =>{
 
 client.on("guild.guildMemberAdd", member => {
     member.createDM().then(function (channel) {
-        return channel.send(`Salutation ${member.displayName} Sur le Discord HyperDimension. Si tu est un member de la guilde utilise <novice Si non <invite dans le channel #Bienvenue.\nPense à vérifier le channel #Rules pour prendre connaissance du règlement.`)
+        return channel.send(`Salutation ${member.displayName} Sur le Discord HyperDimension. 
+        Si tu est un member de la guilde utilise <novice Si non <invite dans le channel #Bienvenue.\n
+        Pense à vérifier le channel #Rules pour prendre connaissance du règlement.`)
     }).catch(console.error)
 });
 
@@ -34,10 +40,10 @@ client.on('message', message => {
         
     } 
     
-     let xpAdd = Math.floor(Math.random() * 7) + 8;
-  console.log(xpAdd);
+    let xpAdd = Math.floor(Math.random() * 7) + 8;
+        console.log(xpAdd);
 
-  if(!xp[message.author.id]){
+    if(!xp[message.author.id]){
     xp[message.author.id] = {
       xp: 0,
       level: 1
@@ -72,4 +78,4 @@ client.on('message', message => {
 { console.log(e.stack); 
 
 }
-    });
+});
