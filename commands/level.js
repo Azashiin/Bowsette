@@ -16,12 +16,12 @@ module.exports.run = async (bot, message, args) => {
 
   let lvlEmbed = new Discord.RichEmbed()
   .setAuthor(message.author.username)
-  .setColor(purple)
+  .setColor("#d604cf")
   .addField("Level", curlvl, true)
   .addField("XP", curxp, true)
-  .setFooter(`${difference} XP til level up`, message.author.displayAvatarURL);
+  .setFooter(`${difference} XP avant de level up`, message.author.displayAvatarURL);
 
-  message.channel.send(lvlEmbed).then(msg => {msg.delete(5000)});
+  message.channel.send(lvlEmbed)
 
 }
 
