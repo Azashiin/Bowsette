@@ -9,7 +9,7 @@ const ownerID = '197821972703477781';
 let xp = require("./xp.json");
 let purple = ("./botconfig.purple");
 
-client.login("process.env.TOKEN");
+client.login(process.env.TOKEN);
 
 client.on("ready", () =>{
     console.log("Launched");
