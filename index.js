@@ -4,7 +4,7 @@ const client = new Discord.Client ();
 const prefix = '<';
 const ownerID = '197821972703477781';
 
-client.login("NTAwOTg0NTc1NDY4NTAzMDQw.DqSyRA.P9akD4RwBa4mNEFBjAGpdBoLJUk");
+client.login(process.env.TOKEN);
 
 client.on("ready", () =>{
     console.log("Launched");
